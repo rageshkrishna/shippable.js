@@ -1,0 +1,62 @@
+{
+  "name": "shippable.js",
+  "version": "0.0.1",
+  "description": "NodeJS wrapper for Shippable API",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rageshkrishna/shippable.js.git"
+  },
+  "keywords": [
+    "Shippable",
+    "NodeJS",
+    "API"
+  ],
+  "author": "Ragesh Krishna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rageshkrishna/shippable.js/issues"
+  },
+  "homepage": "https://github.com/rageshkrishna/shippable.js",
+  "dependencies": {
+    "request": "^2.53.0",
+    "underscore": "^1.8.2"
+  },
+  "jshintConfig": {
+    "node": true,
+    "undef": true,
+    "noarg": true,
+    "white": true,
+    "esnext": true,
+    "strict": true,
+    "newcap": true,
+    "nonbsp": true,
+    "eqeqeq": true,
+    "unused": true,
+    "maxlen": 80,
+    "indent": 2,
+    "bitwise": true,
+    "noempty": true,
+    "latedef": "nofunc",
+    "maxdepth": 5,
+    "quotmark": "single",
+    "trailing": true,
+    "camelcase": true,
+    "maxparams": 8,
+    "globalstrict": true,
+    "maxcomplexity": 8,
+    "maxstatements": 20,
+    "predef": [
+      "ApiError",
+      "logger",
+      "sendErrorAndLog",
+      "sendJSONResponse",
+      "config",
+      "MessageTypes",
+      "safeGet"
+    ]
+  }
+}
