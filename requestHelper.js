@@ -20,7 +20,7 @@ function RequestHelper(apiEndpoint, apiToken, log) {
     opts = _merge(opts);
     request[opts.method](opts, function(err, res, body) {
       if (!err) {
-        log.info('API', opts.method, opts.url, 'returned', res.statusCode);
+        log.debug('API', opts.method, opts.url, 'returned', res.statusCode);
         if (res.statusCode > 299) {
           err = res.statusCode;
         }
