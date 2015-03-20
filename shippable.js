@@ -9,7 +9,7 @@ var Account = require('./account.js'),
     log = bunyan.createLogger({ name: 'shippable.js' });
 
 function Shippable(apiEndpoint, apiToken) {
-  log.debug('Using API endpoint', apiEndpoint);
+  //log.debug('Using API endpoint', apiEndpoint);
 
   var RequestHelper = require('./requestHelper.js');
   var helper = new RequestHelper(apiEndpoint, apiToken, log);
