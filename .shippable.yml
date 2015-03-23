@@ -1,5 +1,9 @@
 language: node_js
 build_image: shipimg/ubuntu1404_nodejs
+env:
+  global:
+    -  secure: qZ3XGNLHuyvwjuuTzX7SEEjA7i+AxERcqkOnfuTNkECv2uzatA6TumREOBcf+RYcVVaSYCyFTEQTbD0cFoxbaxyQa1FMCVwKgnuWkEeHuZmqffVR9d5H+28GcuTn5/hWlqQCQzNm8LjrkKu3efU81eqE34tQXDA9dqz8eTA33PQ/EzscH83zXeOuS9dFd+XRVean1hHBB0YQQg9qtwKGkz8NFYokwExohDL+9PN6i6R90KxMLFu9ziYpasIDDpWkb+r5+egBHJc2tMvP+9JNsPpj+wMctMHPi0SlNPUbnNb21I0Yx236WfmqxPHTdQI6XOL1pOBMVzt5TYVSQ42XWA==
+    -  NPM_EMAIL=ragesh@rageshkrishna.com
 node_js:
   - 0.10
 before_script:
@@ -7,4 +11,6 @@ before_script:
 script:
   - jshint
 after_success:
+  - echo _auth = $NPM_TOKEN > ~/.npmrc
+  - echo email = $NPM_EMAIL >> ~/.npmrc
   - if [ "$BRANCH" == "master" ] && [ "$PULL_REQUEST" == false ]; then npm version patch && git commit --amend -m "Version bump [skip_ci]" && git push git@github.com:rageshkrishna/shippable.js.git && npm publish; fi;
