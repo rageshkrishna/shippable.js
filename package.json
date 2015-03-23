@@ -1,6 +1,6 @@
 {
   "name": "shippable.js",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "NodeJS wrapper for Shippable API",
   "main": "index.js",
   "scripts": {
