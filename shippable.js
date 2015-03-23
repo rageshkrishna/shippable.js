@@ -3,6 +3,7 @@
 module.exports = Shippable;
 
 var Account = require('./account.js'),
+    Build = require('./build.js'),
     Subscription = require('./subscription.js'),
     Project = require('./project.js'),
     bunyan = require('bunyan'),
@@ -43,6 +44,15 @@ function Shippable(apiEndpoint, apiToken) {
       var project = null;
       if (!err) project = new Project(projectData, helper);
       callback(err, project);
+    });
+  };
+
+  this.getBuild = function(buildId, callback) {
+    var url = util.format('/builds/%s', buildId);
+    helper.get(url, function(err, buildData) {
+      var build = null;
+      if (!err) build = new Build(buildData, helper);
+      callback(err, build);
     });
   };
 

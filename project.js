@@ -1,7 +1,8 @@
 'use strict';
 
 var _ = require('underscore'),
-    util = require('util');
+    util = require('util'),
+    Build = require('./build.js');
 
 module.exports = Project;
 
@@ -56,7 +57,9 @@ function Project(data, helper) {
         };
 
     helper.post(url, body, function(err, result) {
-      callback(err, result);
+      var build = null;
+      if (!err) build = new Build({ id: result.buildId }, helper);
+      callback(err, build);
     });
   };
 }
