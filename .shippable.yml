@@ -7,4 +7,4 @@ before_script:
 script:
   - jshint
 after_success:
-  - if [ "$BRANCH" == "master" ] && [ "$PULL_REQUEST" == false ]; then npm version patch && git commit --amend -m "Version bump" && git push && npm publish; fi;
+  - if [ "$BRANCH" == "master" ] && [ "$PULL_REQUEST" == false ]; then npm version patch && git commit --amend -m "Version bump" && git push git@github.com:rageshkrishna/shippable.js.git && npm publish; fi;
