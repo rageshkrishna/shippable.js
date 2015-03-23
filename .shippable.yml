@@ -1,0 +1,8 @@
+language: node_js
+build_image: shipimg/ubuntu1404/node_js
+node_js:
+  - 0.10
+script:
+  - jshint
+after_success:
+  - if [ "$BRANCH" === "master" && "$PULL_REQUEST" === false ]; then npm version patch && git commit --amend -m "Version bump" && git push; fi;
