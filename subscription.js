@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('underscore'),
+    Project = require('./project.js'),
     util = require('util');
 
 module.exports = Subscription;
@@ -22,6 +23,13 @@ function Subscription(data, helper) {
 
   this.getProjects = function(callback) {
     var url = util.format('/subscriptions/%s/projects', this.id);
-    helper.get(url, callback);
+    helper.get(url, function(err, data) {
+      var projectModels = [];
+      _.each(data, function(projectData) {
+        projectModels.push(new Project(projectData, helper));
+      });
+
+      callback(err, projectModels);
+    });
   };
 }
