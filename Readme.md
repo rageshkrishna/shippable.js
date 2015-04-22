@@ -1,4 +1,4 @@
-# NodeJS wrapper for Shippable API
+# Node.JS wrapper for Shippable API
 
 [![Build Status](https://api.shippable.com/projects/550aca695ab6cc1352a4fa9a/badge?branchName=master)](https://app.shippable.com/projects/550aca695ab6cc1352a4fa9a/builds/latest)
 
