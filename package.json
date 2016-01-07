@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/rageshkrishna/shippable.js",
   "dependencies": {
+    "bunyan": "^1.5.1",
     "request": "^2.53.0",
     "underscore": "^1.8.2"
   },
