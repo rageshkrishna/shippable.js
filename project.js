@@ -21,7 +21,7 @@ function Project(data, helper) {
   };
 
   this.enableBuilds = function(callback) {
-    var url = '/workflow/enableRepoBuild',
+    var url = util.format('/projects/%s/enable',self.id),
         body = {
           projectId: self.id
         };
@@ -36,7 +36,7 @@ function Project(data, helper) {
   };
 
   this.disableBuilds = function(callback) {
-    var url = '/workflow/disableBuild',
+    var url = util.format('/projects/%s/disable',self.id);
         body = {
           projectId: self.id
         };
@@ -51,7 +51,7 @@ function Project(data, helper) {
   };
 
   this.build = function(callback) {
-    var url = '/workflow/triggerBuild',
+    var url = util.format('/projects/%s/newBuild', self.id),
         body = {
           projectId: self.id
         };
