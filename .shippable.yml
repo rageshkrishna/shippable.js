@@ -14,3 +14,9 @@ after_success:
   - echo _auth = $NPM_TOKEN > ~/.npmrc
   - echo email = $NPM_EMAIL >> ~/.npmrc
   - if [ "$BRANCH" == "master" ] && [ "$PULL_REQUEST" == false ]; then npm version patch && git commit --amend -m "Version bump [skip ci]" && git push git@github.com:rageshkrishna/shippable.js.git master && npm publish; fi;
+notifications:
+  email:
+    recipients:
+      - ragesh@rageshkrishna.com
+    on_success: always
+    on_failure: always
